@@ -20,7 +20,7 @@ productSchema.pre("save", function (next) {
     this.slug = this.name
       .toLowerCase()
       .replace(/[^a-z0-9]+/g, "-")
-      .replace(/[^-|-$]/g, "")
+      .replace(/^-+|-+$/g, "")
   }
   next()
 })
